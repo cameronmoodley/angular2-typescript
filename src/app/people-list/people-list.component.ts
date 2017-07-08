@@ -1,23 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import { Person } from '../interfaces/person';
-
-
+import { IPeopleService } from 'app/services/people.service';
 
 @Component({
   selector: 'app-people-list',
   templateUrl: './people-list.template.html',
   styleUrls: ['./people-list.component.scss']
 })
+
 export class PeopleListComponent implements OnInit {
+  people: Person[] = [];
 
-  people: Person[] = [
-    {name: 'Luke Skywalker', height: 177, weight: 70},
-    {name: 'Darth Vader', height: 200, weight: 100},
-    {name: 'Han Solo', height: 185, weight: 85},
-  ];
-
-
-  constructor() { }
+  constructor(@Inject('IPeopleService')private _peopleService: IPeopleService ) {
+    this.people = _peopleService.getAll();
+  }
   ngOnInit() {}
-
 }
