@@ -17,8 +17,4 @@ export class PeopleListComponent implements OnInit {
     this.people = _peopleService.getAll();
   }
   ngOnInit() {}
-
-  selectPerson(value) {
-    this.selectedPerson = value;
-  }
 }
