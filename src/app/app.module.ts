@@ -6,9 +6,10 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { PeopleListComponent } from './people-list/people-list.component';
+import { PersonDetailsComponent } from './person-details/person-details.component';
 
 @NgModule({
-  declarations: [ AppComponent, PeopleListComponent ],
+  declarations: [ AppComponent, PeopleListComponent, PersonDetailsComponent ],
   imports: [
     BrowserModule,
     FormsModule,
