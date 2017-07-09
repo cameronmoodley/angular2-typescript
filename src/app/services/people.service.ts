@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Person } from 'app/interfaces/person';
+import { IPersonInterface } from 'app/interfaces/person';
 
 @Injectable()
 export class IPeopleService implements IPeopleService {
 
   constructor() { }
 
-  getAll(): Person[] {
+  getAll(): IPersonInterface[] {
     return[
       {name: 'Luke Skywalker', height: 177, weight: 70},
       {name: 'Darth Vader', height: 200, weight: 100},

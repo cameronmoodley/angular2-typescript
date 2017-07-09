@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import { Person } from '../interfaces/person';
+import { IPersonInterface } from '../interfaces/person';
 import { IPeopleService } from 'app/services/people.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { IPeopleService } from 'app/services/people.service';
 })
 
 export class PeopleListComponent implements OnInit {
-  people: Person[] = [];
+  people: IPersonInterface[] = [];
 
   constructor(@Inject('IPeopleService')private _peopleService: IPeopleService ) {
     this.people = _peopleService.getAll();
